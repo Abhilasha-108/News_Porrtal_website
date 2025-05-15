@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>News Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 30px;
+        }
+        h1 {
+            color: #333;
+        }
+        a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        ul {
+            padding: 0;
+            list-style-type: none;
+        }
+        li {
+            background: white;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>📰 News Portal</h1>
+    <p><a href="/add">➕ Add New Article</a></p>
+    <ul>
+        {% for article in articles %}
+        <li>
+            <a href="/article/{{ article[0] }}">{{ article[1] }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
